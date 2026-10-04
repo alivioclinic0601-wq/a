@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>人間ドック・内視鏡ドック | みずたに内科・内視鏡クリニック</title>
+
+<meta name="description"
+content="神戸市北区・北鈴蘭台で人間ドック・内視鏡ドックなら、みずたに内科・内視鏡クリニック。胃カメラ、大腸カメラ、胃・大腸カメラ同日検査、胸腹部CTを組み合わせた各種ドックに対応します。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* ========================================
+   人間ドックページ専用
+======================================== */
+
+.dock-lead {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dock-lead-main {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.dock-lead p {
+  line-height: 2;
+}
+
+
+/* ========================================
+   コース
+======================================== */
+
+.dock-course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.dock-course-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e3e7e5;
+  padding: 36px 34px 32px;
+}
+
+.dock-course-card.recommended {
+  border: 2px solid #66857a;
+}
+
+.dock-course-badge {
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: #66857a;
+  color: #fff;
+  padding: 6px 18px;
+  font-size: 12px;
+  letter-spacing: .08em;
+}
+
+.dock-course-number {
+  font-family: "Jost", sans-serif;
+  color: #7d968d;
+  letter-spacing: .12em;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.dock-course-card h3 {
+  font-size: 22px;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.dock-course-description {
+  line-height: 1.9;
+  min-height: 75px;
+}
+
+.dock-price {
+  margin: 24px 0 20px;
+  padding: 18px 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.dock-price span {
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.dock-price strong {
+  font-family: "Jost", "Noto Sans JP", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.dock-course-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dock-course-list li {
+  position: relative;
+  padding: 7px 0 7px 22px;
+  line-height: 1.7;
+}
+
+.dock-course-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #66857a;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   比較表
+======================================== */
+
+.dock-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.dock-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.dock-table th,
+.dock-table td {
+  border: 1px solid #dde3e0;
+  padding: 15px 12px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.dock-table thead th {
+  background: #eef3f1;
+  font-weight: 600;
+}
+
+.dock-table tbody th {
+  background: #f8faf9;
+  text-align: left;
+  font-weight: 500;
+}
+
+.dock-table .check {
+  color: #58786d;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.dock-table .dash {
+  color: #aaa;
+}
+
+
+/* ========================================
+   案内BOX
+======================================== */
+
+.dock-info-box {
+  background: #f4f7f6;
+  border-left: 4px solid #789187;
+  padding: 26px 30px;
+  margin-top: 35px;
+  line-height: 1.9;
+}
+
+.dock-info-box h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+
+/* ========================================
+   FAQ
+======================================== */
+
+.dock-faq {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.dock-faq-item {
+  border-bottom: 1px solid #dfe4e2;
+  padding: 25px 0;
+}
+
+.dock-faq-q {
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-left: 34px;
+  position: relative;
+}
+
+.dock-faq-q::before {
+  content: "Q";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Jost", sans-serif;
+  color: #66857a;
+  font-size: 20px;
+}
+
+.dock-faq-a {
+  padding-left: 34px;
+  line-height: 1.9;
+  position: relative;
+}
+
+.dock-faq-a::before {
+  content: "A";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Jost", sans-serif;
+  color: #999;
+  font-size: 20px;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 768px) {
+
+  .dock-course-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .dock-course-card {
+    padding: 32px 24px 28px;
+  }
+
+  .dock-course-description {
+    min-height: auto;
+  }
+
+  .dock-lead-main {
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .dock-lead {
+    text-align: left;
+  }
+
+  .dock-info-box {
+    padding: 22px 20px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="page-hero">
+
+  <div class="page-hero-content">
+
+    <p>MEDICAL CHECKUP</p>
+
+    <h1>人間ドック・内視鏡ドック</h1>
+
+    <span>
+      症状がない今だからこそ、<br>
+      からだを詳しく調べる機会を
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     人間ドックについて
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">ABOUT MEDICAL CHECKUP</p>
+
+      <h2>
+        病気の早期発見と、<br>
+        これからの健康のために
+      </h2>
+
+    </div>
+
+
+    <div class="dock-lead">
+
+      <p class="dock-lead-main">
+        症状がない今だからこそ、<br>
+        一度しっかりと、ご自身のからだを調べてみませんか。
+      </p>
+
+      <p>
+        人間ドックは、生活習慣病をはじめ、
+        がんやさまざまな病気の早期発見を目的として、
+        複数の検査を組み合わせて全身の健康状態を確認する検査です。
+      </p>
+
+      <p>
+        当院では一般的な人間ドックに加え、
+        消化器・内視鏡診療を専門とするクリニックとして、
+        胃カメラ・大腸カメラ、胸腹部CTなどを組み合わせた
+        人間ドックをご用意しています。
+      </p>
+
+      <p>
+        また、会社や自治体などですでに健康診断を受けている方には、
+        胃や大腸を重点的に調べる「内視鏡ドック」もご用意しています。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     こんな方におすすめ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">RECOMMENDED</p>
+
+      <h2>
+        このような方に<br>
+        人間ドックをおすすめします
+      </h2>
+
+    </div>
+
+
+    <div class="check-list">
+
+      <div class="check-item"><span>✓</span>40歳を過ぎ、一度しっかり健康状態を確認したい</div>
+
+      <div class="check-item"><span>✓</span>健康診断だけでは少し心配</div>
+
+      <div class="check-item"><span>✓</span>胃がん・大腸がんが気になる</div>
+
+      <div class="check-item"><span>✓</span>ご家族にがんや生活習慣病になった方がいる</div>
+
+      <div class="check-item"><span>✓</span>これまで胃カメラ・大腸カメラを受けたことがない</div>
+
+      <div class="check-item"><span>✓</span>忙しいため複数の検査をまとめて受けたい</div>
+
+      <div class="check-item"><span>✓</span>喫煙歴があり、胸部についても詳しく調べたい</div>
+
+      <div class="check-item"><span>✓</span>将来のために定期的な健康管理を始めたい</div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     当院の特徴
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">OUR FEATURES</p>
+
+      <h2>当院の人間ドックの特徴</h2>
+
+    </div>
+
+
+    <div class="disease-grid">
+
+      <div class="disease-card">
+        <h3>胃・大腸カメラを<br>同日に受けられます</h3>
+        <p>
+          条件が合う方は胃カメラと大腸カメラを同日に行うことができます。
+          別々の日に来院する負担を減らし、
+          胃から大腸までまとめて詳しく調べます。
+        </p>
+      </div>
+
+
+      <div class="disease-card">
+        <h3>鎮静剤を使用した<br>苦痛に配慮した内視鏡</h3>
+        <p>
+          ご希望や全身状態を確認したうえで鎮静剤を使用し、
+          胃カメラ・大腸カメラへの不安や負担をできるだけ軽減します。
+        </p>
+      </div>
+
+
+      <div class="disease-card">
+        <h3>内視鏡専門医による<br>丁寧な検査</h3>
+        <p>
+          大学病院・がん専門病院などで内視鏡診療に携わってきた経験を生かし、
+          早期病変の発見を意識した丁寧な観察を行います。
+        </p>
+      </div>
+
+
+      <div class="disease-card">
+        <h3>胸腹部CTによる<br>詳しい画像検査</h3>
+        <p>
+          胸部から腹部までを単純CTで撮影するコースもご用意しています。
+          X線検査や超音波検査とは異なる方法で体内を確認します。
+        </p>
+      </div>
+
+
+      <div class="disease-card">
+        <h3>異常発見後の診療まで<br>一貫して対応</h3>
+        <p>
+          人間ドックで異常が見つかった場合には、
+          必要に応じて当院での精密検査・治療や、
+          適切な医療機関へのご紹介につなげます。
+        </p>
+      </div>
+
+
+      <div class="disease-card">
+        <h3>土曜日も<br>内視鏡検査に対応</h3>
+        <p>
+          平日に受診しにくい方にも検査を受けていただきやすいよう、
+          土曜日の内視鏡検査にも対応します。
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     人間ドック コース
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">MEDICAL CHECKUP COURSE</p>
+
+      <h2>人間ドック コース・料金</h2>
+
+    </div>
+
+
+    <div class="dock-lead">
+
+      <p>
+        基本的な健康状態を総合的に確認する標準コースから、
+        胃カメラ・大腸カメラ・胸腹部CTまで組み合わせたフルコースまで、
+        ご希望に合わせてお選びいただけます。
+      </p>
+
+    </div>
+
+
+    <div class="dock-course-grid">
+
+
+      <!-- COURSE 01 -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">COURSE 01</div>
+
+        <h3>標準コース</h3>
+
+        <p class="dock-course-description">
+          生活習慣病をはじめ、
+          基本的な健康状態を総合的に確認するスタンダードな人間ドックです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>33,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>診察・問診</li>
+          <li>身体測定</li>
+          <li>血圧測定</li>
+          <li>血液検査</li>
+          <li>尿検査</li>
+          <li>心電図</li>
+          <li>胸部X線</li>
+          <li>腹部超音波検査</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- COURSE 02 -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">COURSE 02</div>
+
+        <h3>標準コース＋胃カメラ</h3>
+
+        <p class="dock-course-description">
+          標準コースに胃カメラを追加し、
+          食道・胃・十二指腸まで詳しく調べるコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>44,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>標準コース一式</li>
+          <li>胃カメラ検査</li>
+          <li>鎮静剤使用可</li>
+          <li>食道・胃・十二指腸を観察</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- COURSE 03 -->
+
+      <div class="dock-course-card recommended">
+
+        <div class="dock-course-badge">おすすめ</div>
+
+        <div class="dock-course-number">COURSE 03</div>
+
+        <h3>標準コース＋胃・大腸カメラ</h3>
+
+        <p class="dock-course-description">
+          標準コースに胃カメラと大腸カメラを追加し、
+          胃から大腸までまとめて詳しく調べるコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>66,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>標準コース一式</li>
+          <li>胃カメラ検査</li>
+          <li>大腸カメラ検査</li>
+          <li>胃・大腸カメラ同日検査</li>
+          <li>鎮静剤使用可</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- COURSE 04 -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">COURSE 04</div>
+
+        <h3>フルコース</h3>
+
+        <p class="dock-course-description">
+          標準コースに胃・大腸カメラ、胸腹部単純CTを組み合わせ、
+          より幅広く全身の健康状態を調べるコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>77,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>標準コース一式</li>
+          <li>胃カメラ検査</li>
+          <li>大腸カメラ検査</li>
+          <li>胃・大腸カメラ同日検査</li>
+          <li>鎮静剤使用可</li>
+          <li>胸腹部単純CT</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     内視鏡ドック
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">ENDOSCOPY CHECKUP</p>
+
+      <h2>内視鏡ドック</h2>
+
+    </div>
+
+
+    <div class="dock-lead">
+
+      <p class="dock-lead-main">
+        健康診断は受けている。<br>
+        でも、胃や大腸はもっと詳しく調べたい。
+      </p>
+
+      <p>
+        会社や自治体などで定期健康診断を受けている方にも、
+        胃や大腸を詳しく調べていただけるよう、
+        内視鏡検査を中心としたドックをご用意しています。
+      </p>
+
+      <p>
+        胃カメラ・大腸カメラともに、
+        ご希望や全身状態を確認したうえで鎮静剤を使用し、
+        検査への不安や負担に配慮します。
+      </p>
+
+    </div>
+
+
+    <div class="dock-course-grid">
+
+
+      <!-- 胃カメラ単独コース -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">ENDOSCOPY 01</div>
+
+        <h3>胃カメラ単独コース</h3>
+
+        <p class="dock-course-description">
+          食道・胃・十二指腸を内視鏡で直接観察します。
+          胃がん・食道がんなどの早期発見を目的としたコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>22,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>胃カメラ検査</li>
+          <li>鎮静剤使用可</li>
+          <li>食道・胃・十二指腸を観察</li>
+          <li>検査後の結果説明</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- 大腸カメラ単独コース -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">ENDOSCOPY 02</div>
+
+        <h3>大腸カメラ単独コース</h3>
+
+        <p class="dock-course-description">
+          大腸を内視鏡で詳しく観察し、
+          大腸がんや大腸ポリープなどの発見を目的としたコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>33,000円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>大腸カメラ検査</li>
+          <li>鎮静剤使用可</li>
+          <li>全大腸を観察</li>
+          <li>検査後の結果説明</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- 胃＋大腸 -->
+
+      <div class="dock-course-card recommended">
+
+        <div class="dock-course-badge">おすすめ</div>
+
+        <div class="dock-course-number">ENDOSCOPY 03</div>
+
+        <h3>胃カメラ＋大腸カメラコース</h3>
+
+        <p class="dock-course-description">
+          胃カメラと大腸カメラを同日に行い、
+          食道・胃から大腸までを一度に詳しく調べるコースです。
+        </p>
+
+        <div class="dock-price">
+          <span>料金（税込）</span>
+          <strong>49,500円</strong>
+        </div>
+
+        <ul class="dock-course-list">
+          <li>胃カメラ検査</li>
+          <li>大腸カメラ検査</li>
+          <li>胃・大腸カメラ同日検査</li>
+          <li>鎮静剤使用可</li>
+          <li>検査後の結果説明</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- コース相談 -->
+
+      <div class="dock-course-card">
+
+        <div class="dock-course-number">WHICH COURSE?</div>
+
+        <h3>
+          どの検査を受けるか<br>
+          迷われている方へ
+        </h3>
+
+        <p class="dock-course-description">
+          年齢、これまでの検査歴、既往歴、ご家族の病歴などによって、
+          適した検査は異なります。
+        </p>
+
+        <div class="dock-info-box" style="margin-top:20px;">
+
+          <p>
+            「胃だけでいいのか」
+            「大腸カメラも受けた方がよいのか」
+            など、迷われている方もお気軽にご相談ください。
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="dock-info-box">
+
+      <h3>内視鏡ドックについて</h3>
+
+      <p>
+        内視鏡ドックは、症状のない方を対象とした自由診療の検査です。
+        腹痛、血便、黒い便、持続する胃痛などの症状がある方や、
+        健診ですでに異常を指摘されている方は、
+        保険診療での検査をご案内できる場合があります。
+      </p>
+
+      <p>
+        検査中に病変が見つかり、
+        組織検査や治療などが必要となった場合には、
+        内容に応じて別途費用が発生する場合があります。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     人間ドック比較
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">COURSE COMPARISON</p>
+
+      <h2>人間ドック コース比較</h2>
+
+    </div>
+
+
+    <div class="dock-table-wrap">
+
+      <table class="dock-table">
+
+        <thead>
+
+          <tr>
+
+            <th>検査内容</th>
+
+            <th>標準<br>コース</th>
+
+            <th>標準コース<br>＋胃カメラ</th>
+
+            <th>標準コース<br>＋胃・大腸カメラ</th>
+
+            <th>フル<br>コース</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <th>診察・身体測定</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>血液・尿検査</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>心電図</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>胸部X線</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>腹部超音波</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>胃カメラ</th>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>大腸カメラ</th>
+            <td class="dash">－</td>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>胸腹部単純CT</th>
+            <td class="dash">－</td>
+            <td class="dash">－</td>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>料金（税込）</th>
+            <td><strong>33,000円</strong></td>
+            <td><strong>44,000円</strong></td>
+            <td><strong>66,000円</strong></td>
+            <td><strong>77,000円</strong></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     内視鏡ドック比較
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">ENDOSCOPY COURSE COMPARISON</p>
+
+      <h2>内視鏡ドック コース比較</h2>
+
+    </div>
+
+
+    <div class="dock-table-wrap">
+
+      <table class="dock-table">
+
+        <thead>
+
+          <tr>
+
+            <th>検査内容</th>
+
+            <th>胃カメラ<br>単独コース</th>
+
+            <th>大腸カメラ<br>単独コース</th>
+
+            <th>胃カメラ＋大腸カメラ<br>コース</th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody>
+
+          <tr>
+            <th>胃カメラ</th>
+            <td class="check">●</td>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>大腸カメラ</th>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>鎮静剤使用可</th>
+            <td class="check">●</td>
+            <td class="check">●</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>胃・大腸同日検査</th>
+            <td class="dash">－</td>
+            <td class="dash">－</td>
+            <td class="check">●</td>
+          </tr>
+
+          <tr>
+            <th>料金（税込）</th>
+            <td><strong>22,000円</strong></td>
+            <td><strong>33,000円</strong></td>
+            <td><strong>49,500円</strong></td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     胃・大腸カメラ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container">
+
+    <div class="detail-image">
+
+      <img
+        src="images/endoscopy-dock.jpg"
+        alt="胃カメラ・大腸カメラによる内視鏡ドック">
+
+    </div>
+
+
+    <div class="detail-text">
+
+      <p class="detail-label">ENDOSCOPY</p>
+
+      <h2>
+        胃・大腸カメラを<br>
+        1日で
+      </h2>
+
+      <p>
+        胃がん・大腸がんは、
+        早期の段階では自覚症状がほとんどないこともあります。
+      </p>
+
+      <p>
+        当院では条件が合う方について、
+        胃カメラと大腸カメラを同日に受けていただくことができます。
+      </p>
+
+      <p>
+        ご希望や全身状態を確認したうえで鎮静剤を使用し、
+        検査への不安や負担にも配慮します。
+      </p>
+
+      <p>
+        一度の来院で胃と大腸をまとめて詳しく調べたい方にも
+        おすすめです。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CT
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container">
+
+    <div class="detail-text">
+
+      <p class="detail-label">CT EXAMINATION</p>
+
+      <h2>
+        胸腹部CTによる<br>
+        詳しい画像検査
+      </h2>
+
+      <p>
+        フルコースでは、
+        胸部から腹部までの単純CT検査を行います。
+      </p>
+
+      <p>
+        CTは身体を断面画像として観察でき、
+        胸部X線や腹部超音波とは異なる方法で
+        肺や腹部臓器などを確認することができます。
+      </p>
+
+      <p>
+        当院の人間ドックでは造影剤を使用せず、
+        単純CTによる検査を予定しています。
+      </p>
+
+
+      <div class="dock-info-box">
+
+        <h3>CT検査について</h3>
+
+        <p>
+          CT検査では放射線を使用します。
+          年齢・既往歴・これまでの検査歴などを踏まえ、
+          検査についてご説明したうえで実施します。
+        </p>
+
+        <p>
+          妊娠中または妊娠の可能性がある方は、
+          必ず事前にお申し出ください。
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="detail-image">
+
+      <img src="images/ct.jpg" alt="胸腹部CT検査">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     検査の流れ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">FLOW</p>
+
+      <h2>人間ドック・内視鏡ドックの流れ</h2>
+
+    </div>
+
+
+    <div class="flow-photo-list">
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="人間ドックの予約">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 01</div>
+
+          <h3>ご予約</h3>
+
+          <p>
+            WEBまたはお電話からご予約ください。
+            ご希望のコースをお選びいただき、
+            既往歴や服用中のお薬などを確認します。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="検査前日の準備">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 02</div>
+
+          <h3>検査前日</h3>
+
+          <p>
+            ご予約いただいたコースに応じて、
+            食事制限や大腸カメラのための準備について
+            事前に詳しくご案内します。
+          </p>
+
+          <p class="flow-note">
+            ※普段服用しているお薬については、
+            事前の指示に従ってください。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="人間ドック当日の受付">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 03</div>
+
+          <h3>ご来院・基本検査</h3>
+
+          <p>
+            受付後、体調・既往歴・服用中のお薬などを確認します。
+          </p>
+
+          <p>
+            人間ドックでは身体測定、採血、尿検査、心電図など、
+            選択されたコースに応じた検査を順番に行います。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="胃カメラと大腸カメラ検査">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 04</div>
+
+          <h3>内視鏡・画像検査</h3>
+
+          <p>
+            選択されたコースに応じて、
+            腹部超音波、胃カメラ、大腸カメラ、
+            CTなどの検査を行います。
+          </p>
+
+          <p>
+            胃・大腸カメラを含むコースでは、
+            条件が合う方は鎮静剤を使用して
+            両方の内視鏡検査を同日に行います。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="検査後の休憩と結果説明">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 05</div>
+
+          <h3>休憩・結果説明</h3>
+
+          <p>
+            鎮静剤を使用した方は、
+            検査後に院内で十分に休憩していただきます。
+          </p>
+
+          <p>
+            当日ご説明できる検査については結果をご説明し、
+            後日判明する検査結果とあわせて
+            総合的に健康状態を確認します。
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     注意事項
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">IMPORTANT INFORMATION</p>
+
+      <h2>検査を受けられる方へ</h2>
+
+    </div>
+
+
+    <div class="medical-intro">
+
+      <p>
+        人間ドック・内視鏡ドックは、
+        原則として症状のない方を対象とした自由診療の検査です。
+      </p>
+
+      <p>
+        現在症状がある方や、すでに健康診断などで異常を指摘されている方は、
+        人間ドックではなく通常の診療・精密検査をご案内する場合があります。
+      </p>
+
+      <p>
+        糖尿病のお薬、抗血栓薬などを服用中の方は、
+        自己判断で中止せず、必ず事前にご相談ください。
+      </p>
+
+      <p>
+        鎮静剤を使用した場合、
+        検査当日は自動車・バイク・自転車の運転はできません。
+        公共交通機関またはご家族による送迎などでご来院ください。
+      </p>
+
+      <p>
+        大腸カメラを含むコースでは、
+        腸管洗浄剤を使用した事前処置が必要です。
+        詳しい方法はご予約時にご案内します。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FAQ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">FAQ</p>
+
+      <h2>よくあるご質問</h2>
+
+    </div>
+
+
+    <div class="dock-faq">
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          人間ドックと内視鏡ドックの違いは何ですか？
+        </div>
+
+        <div class="dock-faq-a">
+          人間ドックは、血液検査・尿検査・心電図・胸部X線・腹部超音波などを組み合わせ、
+          全身の健康状態を総合的に確認します。
+          内視鏡ドックは、胃や大腸を重点的に調べたい方のための検査です。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          会社で健康診断を受けています。それでも人間ドックは必要ですか？
+        </div>
+
+        <div class="dock-faq-a">
+          すでに定期健康診断を受けている方で、
+          胃や大腸だけを詳しく調べたい場合には、
+          胃カメラ単独コース・大腸カメラ単独コースなどを
+          選択していただくこともできます。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          胃カメラと大腸カメラは同じ日に受けられますか？
+        </div>
+
+        <div class="dock-faq-a">
+          はい。条件が合う方は、
+          胃カメラと大腸カメラを同日に受けていただけます。
+          既往歴や服用中のお薬などによっては
+          別日をご案内する場合があります。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          内視鏡検査では鎮静剤を使用できますか？
+        </div>
+
+        <div class="dock-faq-a">
+          はい。ご希望や全身状態を確認したうえで、
+          鎮静剤を使用した内視鏡検査に対応します。
+          鎮静剤を使用した当日は運転できませんのでご注意ください。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          CTでは造影剤を使用しますか？
+        </div>
+
+        <div class="dock-faq-a">
+          当院の人間ドックで行う胸腹部CTは、
+          造影剤を使用しない単純CTを予定しています。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          人間ドックで異常が見つかった場合はどうなりますか？
+        </div>
+
+        <div class="dock-faq-a">
+          当院で対応可能なものについては、
+          必要に応じて追加検査や診療をご案内します。
+          専門的な治療が必要な場合には、
+          適切な医療機関へご紹介します。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          健康保険は使えますか？
+        </div>
+
+        <div class="dock-faq-a">
+          健康診断・人間ドック・内視鏡ドックは原則として自由診療です。
+          一方、症状がある場合や検査で異常が見つかった後の診療については、
+          内容に応じて保険診療となる場合があります。
+        </div>
+
+      </div>
+
+
+      <div class="dock-faq-item">
+
+        <div class="dock-faq-q">
+          どのコースを選べばよいか分かりません。
+        </div>
+
+        <div class="dock-faq-a">
+          年齢、これまでの検査歴、既往歴、ご家族の病歴、
+          気になっている病気などを踏まえてご相談いただけます。
+          コース選びに迷われる方もお気軽にお問い合わせください。
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CTA
+======================================== -->
+
+<section class="cta-section">
+
+  <h2>
+    人間ドック・内視鏡ドックの<br>
+    ご予約・ご相談
+  </h2>
+
+  <p>
+    ご自身の健康状態を詳しく確認したい方、<br>
+    どのコースを選べばよいか分からない方も<br>
+    お気軽にご相談ください。
+  </p>
+
+
+  <div class="cta-buttons">
+
+    <a href="#" class="cta-btn">
+      WEB予約はこちら
+    </a>
+
+    <a href="tel:00000000000" class="cta-btn tel-btn">
+      TEL: 000-000-0000
+    </a>
+
+  </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

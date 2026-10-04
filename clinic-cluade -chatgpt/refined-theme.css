@@ -1,0 +1,146 @@
+@charset "UTF-8";
+/* Refined typography theme — load AFTER style.css and home.css. */
+:root {
+  --pri:#376c77; --pri-d:#234a55; --pri-l:#edf4f3;
+  --acc:#9bada0; --ink:#263d43; --mut:#627278;
+  --line:#dce6e3; --soft:#f7f9f7;
+  --theme-text:#354448; --theme-heading:#254b54;
+  --theme-muted:#69777a; --theme-accent:#537e7e;
+}
+html { font-size:16px; }
+body, body.home {
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+  color:var(--theme-text); font-weight:400; letter-spacing:.035em;
+  line-height:1.9; -webkit-font-smoothing:antialiased;
+}
+body h1,body h2,body h3,body h4,
+body.home h1,body.home h2,body.home h3 {
+  font-family:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  color:var(--theme-heading); letter-spacing:.075em; line-height:1.55;
+  font-weight:600;
+}
+body p,body li,body td,body dd { line-height:1.95; }
+body a { transition:color .2s ease,background-color .2s ease; }
+body a:hover { color:var(--theme-accent); }
+/* English microheadings */
+body .sec-en,body .detail-label,body .page-hero-content > p,
+body .hv-en,body .pickup-en,body .strength-no,body .profile-heading > span,
+body .flow-number,body .tel-label {
+  font-family:"Jost",Arial,sans-serif; font-weight:400;
+  letter-spacing:.19em; color:var(--theme-accent);
+}
+/* Common navigation */
+body nav a { color:var(--theme-heading); font-size:clamp(14px,1.12vw,17px);font-weight:500;letter-spacing:.045em; }
+body nav a:hover { color:var(--theme-accent); }
+body .reserve-btn { background:var(--pri-d); color:#fff; font-weight:600; }
+body .reserve-btn:hover { color:#fff; background:var(--pri); }
+body .clinic-address,body .clinic-tel { color:var(--theme-muted); }
+/* Headings and descriptive text */
+body .sec-head h2 { font-size:clamp(25px,2.8vw,34px);font-weight:600;color:var(--theme-heading);letter-spacing:.09em; }
+body .sec-lead,body .detail-text > p:not(.detail-label),body .medical-intro p,
+body .clinic-concept p,body .disease-card p,body .medical-card p {color:var(--theme-text);}
+body .detail-heading h2,body .detail-text h2 {color:var(--theme-heading);font-weight:600;letter-spacing:.07em;}
+body .section h2 {color:var(--theme-heading);font-weight:600;}
+body .page-hero-content h1 {font-weight:600;letter-spacing:.09em;}
+body .page-hero-content span {letter-spacing:.04em;line-height:1.9;}
+body .gray {background:#f7f9f7;}
+body .feature-card h3,body .medical-card h3,body .disease-card h3,
+body .flow-item h3,body .pickup-card h3 {color:var(--theme-heading);font-weight:600;}
+/* Home hero: preserve legibility over photographic background */
+body.home .hv-copy h1 {font-size:clamp(30px,4vw,49px);font-weight:600;letter-spacing:.075em;color:#fff;line-height:1.6;}
+body.home .hv-lead {font-size:clamp(14px,1.35vw,16px);color:rgba(255,255,255,.96);}
+body.home .hv-en {color:#d3e6e1;}
+body.home .hv-en::before {background:#d3e6e1;}
+body.home .hv-veil {background:linear-gradient(100deg,rgba(18,46,53,.83) 0%,rgba(18,46,53,.58) 43%,rgba(18,46,53,.12) 80%);}
+body.home .sec-head.light h2 {color:#fff;}
+body.home .sec-head.light .sec-en {color:#d3e6e1;}
+body.home .sec-head.light .sec-lead {color:rgba(255,255,255,.9);}
+/* Keep text on dark buttons legible */
+body .hv-btn-main,body .side-cta,body .mobile-fixed-menu a {color:#fff;}
+@media(max-width:768px) {
+  body,body.home {font-size:15px;letter-spacing:.025em;line-height:1.85;}
+  body h1,body h2,body h3 {letter-spacing:.045em;}
+  body.home .hv-copy h1 {font-size:clamp(27px,7vw,36px);line-height:1.55;}
+  body .sec-head h2 {font-size:clamp(23px,6vw,29px);}
+  body nav a {font-size:16px;}
+}
+
+/* FEATURES: light background and readable dark text */
+body.home #features.feat-block {
+  background:#f3f7f9;
+}
+body.home #features.feat-block::before,
+body.home #features.feat-block::after {
+  border-color:rgba(55,108,119,.12);
+}
+body.home #features .sec-head.light h2 { color:#254b54; }
+body.home #features .sec-head.light .sec-en { color:#537e7e; }
+body.home #features .sec-head.light .sec-lead { color:#52676e; }
+body.home #features .sec-head h2::after { background:#9bada0; }
+body.home #features .feat-card {
+  background:#fff;
+  border-color:#dce6e3;
+  color:#263d43;
+  box-shadow:0 5px 22px rgba(35,74,85,.045);
+}
+body.home #features .feat-card h3 { color:#254b54; }
+body.home #features .feat-card p { color:#52676e; }
+body.home #features .feat-no { color:#7b9b9c; }
+body.home #features .feat-card:hover {
+  background:#fff;
+  color:#263d43;
+  box-shadow:0 14px 32px rgba(35,74,85,.12);
+}
+body.home #features .feat-card:hover p { color:#52676e; }
+
+/* Calm, two-tier clinic header — override legacy navigation */
+body header {background:#fff;box-shadow:0 3px 22px rgba(35,74,85,.07);border-bottom:1px solid #dce6e3;}
+body header .container {width:min(94%,1240px);max-width:1240px;margin:auto;}
+body header .header-top {background:#fff;border-bottom:1px solid #e5eeec;}
+body header .header-top .container {min-height:91px;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:8px 0;}
+body header .logo img {height:72px;width:auto;max-width:min(43vw,410px);object-fit:contain;}
+body header .header-info {display:flex;align-items:center;gap:28px;margin-left:auto;}
+body header .clinic-address {font-size:12px;line-height:1.65;letter-spacing:.035em;color:#687b7e;}
+body header .clinic-tel {display:flex;align-items:baseline;gap:9px;white-space:nowrap;}
+body header .clinic-tel .tel-label {font-size:11px;color:#6a8587;}
+body header .clinic-tel a {font-family:Jost,Arial,sans-serif;font-size:23px;font-weight:500;letter-spacing:.025em;text-decoration:none;color:#254b54;}
+body header .header-nav {background:#fbfcfb;}
+body header .header-nav .container {min-height:59px;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0;}
+body header nav {margin:0;min-width:0;}
+body header nav > ul {display:flex;align-items:center;gap:0;padding:0;}
+body header nav > ul > li {padding:0;border-right:1px solid #e0e9e6;}
+body header nav > ul > li:last-child {border-right:0;}
+body header nav > ul > li > a {display:block;padding:17px clamp(10px,1.45vw,21px);font-size:clamp(12px,1.05vw,15px);font-weight:500;line-height:1.6;letter-spacing:.07em;white-space:nowrap;color:#254b54;}
+body header nav > ul > li > a:hover,body header nav > ul > li > a:focus-visible {color:#376c77;background:#edf4f3;}
+body header .submenu {top:100%;min-width:190px;border:1px solid #e0e9e6;border-radius:0 0 9px 9px;padding:7px 0;background:#fff;}
+body header .submenu a {font-size:14px;padding:11px 18px;color:#354448;}
+body header .reserve-btn {flex-shrink:0;margin-left:auto;border-radius:4px;padding:12px 24px;font-size:14px;letter-spacing:.09em;background:#376c77;color:#fff;}
+body header .reserve-btn:hover {background:#254b54;color:#fff;}
+body header .mobile-logo {display:none;}
+@media(max-width:1000px) and (min-width:769px) {body header .header-top .container{min-height:77px;}body header .logo img{height:58px;}body header .header-info{gap:12px;}body header .clinic-address{font-size:10px;}body header .clinic-tel a{font-size:18px;}body header nav > ul > li > a{padding:16px 9px;font-size:12px;}body header .reserve-btn{padding:10px 13px;font-size:12px;}}
+@media(max-width:768px) {
+ body header .header-top{display:none;}
+ body header .header-nav{background:#fff;}
+ body header .header-nav .container{height:68px;min-height:68px;justify-content:space-between;gap:12px;padding:0;}
+ body header .mobile-logo{display:block;margin-right:auto;}
+ body header .mobile-logo img{display:block;height:43px;max-width:min(66vw,280px);width:auto;object-fit:contain;}
+ body header .hamburger{display:block;order:3;font-size:27px;line-height:1;color:#254b54;cursor:pointer;}
+ body header nav{display:none;position:absolute;top:100%;left:0;width:100%;max-height:calc(100dvh - 68px);overflow-y:auto;background:#fff;box-shadow:0 12px 22px rgba(35,74,85,.12);margin:0;}
+ body header nav.active{display:block;}
+ body header nav > ul{display:flex;flex-direction:column;align-items:stretch;gap:0;padding:8px 6% 22px;}
+ body header nav > ul > li{border-right:0;border-bottom:1px solid #e6eeeb;padding:0;}
+ body header nav > ul > li > a{font-size:15px;padding:14px 5px;white-space:normal;}
+ body header .submenu{display:none;position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;border-radius:0;padding:0 0 9px 14px;min-width:0;}
+ body header .dropdown.open .submenu{display:flex;flex-direction:column;}
+ body header .submenu a{font-size:14px;padding:9px 12px;}
+ body header .reserve-btn{display:none;}
+}
+
+/* 内視鏡検査のご案内：説明文とカードの視認性 */
+body.home .endo-block{background:#fff;}
+body.home .endo-catch{font-size:clamp(18px,2vw,23px);font-weight:600;line-height:1.9;color:#244858;}
+body.home .endo-intro{max-width:920px;margin:0 auto 48px;padding:30px 38px;background:#f3f7f9;border-left:3px solid #81aeb6;color:#344b56;line-height:2.1;}
+body.home .endo-intro p+p{margin-top:1.1em;}
+body.home .endo-card-kicker{font-size:12px!important;letter-spacing:.1em;color:#527e89!important;margin-bottom:8px!important;}
+body.home .endo-note{margin:24px auto 0;max-width:920px;font-size:13px;line-height:1.8;color:#5b6d74;}
+@media(max-width:768px){body.home .endo-intro{padding:24px 20px;margin-bottom:32px;}body.home .endo-catch{font-size:18px;}}

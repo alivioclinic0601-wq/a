@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>健康診断・雇入時健診・定期健診 | みずたに内科・内視鏡クリニック</title>
+
+<meta name="description"
+content="神戸市北区・北鈴蘭台で健康診断なら、みずたに内科・内視鏡クリニック。雇入時健康診断、定期健康診断、特定健康診査などに対応予定。健康診断から精密検査、胃カメラ・大腸カメラまでご相談いただけます。">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* ========================================
+   健康診断ページ専用
+======================================== */
+
+.checkup-lead {
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.checkup-lead-main {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.8;
+  margin-bottom: 24px;
+}
+
+.checkup-lead p {
+  line-height: 2;
+}
+
+
+/* ========================================
+   健診カード
+======================================== */
+
+.checkup-course-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-top: 45px;
+}
+
+.checkup-course-card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e3e7e5;
+  padding: 36px 34px 32px;
+}
+
+.checkup-course-number {
+  font-family: "Jost", sans-serif;
+  color: #7d968d;
+  letter-spacing: .12em;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.checkup-course-card h3 {
+  font-size: 22px;
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.checkup-course-description {
+  line-height: 1.9;
+  min-height: 75px;
+}
+
+.checkup-price {
+  margin: 24px 0 20px;
+  padding: 18px 0;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.checkup-price span {
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.checkup-price strong {
+  font-family: "Jost", "Noto Sans JP", sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.checkup-course-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.checkup-course-list li {
+  position: relative;
+  padding: 7px 0 7px 22px;
+  line-height: 1.7;
+}
+
+.checkup-course-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #66857a;
+  font-weight: 600;
+}
+
+
+/* ========================================
+   検査項目表
+======================================== */
+
+.checkup-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.checkup-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.checkup-table th,
+.checkup-table td {
+  border: 1px solid #dde3e0;
+  padding: 15px 16px;
+  vertical-align: middle;
+}
+
+.checkup-table thead th {
+  background: #eef3f1;
+  text-align: center;
+  font-weight: 600;
+}
+
+.checkup-table tbody th {
+  width: 30%;
+  background: #f8faf9;
+  text-align: left;
+  font-weight: 500;
+}
+
+.checkup-table tbody td {
+  line-height: 1.8;
+}
+
+
+/* ========================================
+   案内BOX
+======================================== */
+
+.checkup-info-box {
+  background: #f4f7f6;
+  border-left: 4px solid #789187;
+  padding: 26px 30px;
+  margin-top: 35px;
+  line-height: 1.9;
+}
+
+.checkup-info-box h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.checkup-note {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  margin-top: 18px;
+}
+
+
+/* ========================================
+   自治体健診
+======================================== */
+
+.public-checkup-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.public-checkup-card {
+  background: #fff;
+  border: 1px solid #e1e6e4;
+  padding: 30px;
+}
+
+.public-checkup-card h3 {
+  font-size: 20px;
+  margin: 0 0 15px;
+}
+
+.public-checkup-card p {
+  line-height: 1.9;
+}
+
+
+/* ========================================
+   FAQ
+======================================== */
+
+.checkup-faq {
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+
+.checkup-faq-item {
+  border-bottom: 1px solid #dfe4e2;
+  padding: 25px 0;
+}
+
+.checkup-faq-q {
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-left: 34px;
+  position: relative;
+}
+
+.checkup-faq-q::before {
+  content: "Q";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Jost", sans-serif;
+  color: #66857a;
+  font-size: 20px;
+}
+
+.checkup-faq-a {
+  padding-left: 34px;
+  line-height: 1.9;
+  position: relative;
+}
+
+.checkup-faq-a::before {
+  content: "A";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: "Jost", sans-serif;
+  color: #999;
+  font-size: 20px;
+}
+
+
+/* ========================================
+   スマートフォン
+======================================== */
+
+@media (max-width: 768px) {
+
+  .checkup-course-grid,
+  .public-checkup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .checkup-course-card,
+  .public-checkup-card {
+    padding: 28px 22px;
+  }
+
+  .checkup-course-description {
+    min-height: auto;
+  }
+
+  .checkup-lead-main {
+    font-size: 20px;
+  }
+
+  .checkup-lead {
+    text-align: left;
+  }
+
+  .checkup-info-box {
+    padding: 22px 20px;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================
+     HERO
+======================================== -->
+
+<section class="page-hero">
+
+  <div class="page-hero-content">
+
+    <p>HEALTH CHECKUP</p>
+
+    <h1>健康診断</h1>
+
+    <span>
+      毎日の健康管理から、<br>
+      病気の早期発見まで
+    </span>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     健康診断について
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">ABOUT HEALTH CHECKUP</p>
+
+      <h2>
+        定期的な健康診断で、<br>
+        ご自身のからだを見つめる機会を
+      </h2>
+
+    </div>
+
+
+    <div class="checkup-lead">
+
+      <p class="checkup-lead-main">
+        健康診断は、症状がない時から<br>
+        ご自身の健康状態を確認する大切な機会です。
+      </p>
+
+      <p>
+        高血圧、糖尿病、脂質異常症などの生活習慣病は、
+        初期には自覚症状がほとんどないこともあります。
+      </p>
+
+      <p>
+        当院では、就職・転職時などに必要となる雇入時健康診断、
+        企業の定期健康診断をはじめ、
+        各種健康診断に対応します。
+      </p>
+
+      <p>
+        また、健康診断で異常を指摘された場合には、
+        必要に応じて当院での再検査・精密検査や、
+        胃カメラ・大腸カメラなどの検査まで
+        継続してご相談いただけます。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     対応する健康診断
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">CHECKUP MENU</p>
+
+      <h2>当院で対応する健康診断</h2>
+
+    </div>
+
+
+    <div class="checkup-course-grid">
+
+
+      <!-- 雇入時 -->
+
+      <div class="checkup-course-card">
+
+        <div class="checkup-course-number">CHECKUP 01</div>
+
+        <h3>雇入時健康診断</h3>
+
+        <p class="checkup-course-description">
+          就職・転職などで新たに勤務を開始する際に
+          必要となる健康診断です。
+        </p>
+
+        <div class="checkup-price">
+          <span>料金（税込）</span>
+          <strong>料金未定</strong>
+        </div>
+
+        <ul class="checkup-course-list">
+          <li>既往歴・業務歴の確認</li>
+          <li>自覚症状・他覚症状の確認</li>
+          <li>身体測定</li>
+          <li>視力・聴力</li>
+          <li>胸部X線</li>
+          <li>血圧測定</li>
+          <li>血液検査</li>
+          <li>尿検査</li>
+          <li>心電図</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- 定期 -->
+
+      <div class="checkup-course-card">
+
+        <div class="checkup-course-number">CHECKUP 02</div>
+
+        <h3>定期健康診断</h3>
+
+        <p class="checkup-course-description">
+          企業などで定期的に行われる
+          法定健康診断に対応します。
+        </p>
+
+        <div class="checkup-price">
+          <span>料金（税込）</span>
+          <strong>料金未定</strong>
+        </div>
+
+        <ul class="checkup-course-list">
+          <li>問診・診察</li>
+          <li>身体測定</li>
+          <li>視力・聴力</li>
+          <li>胸部X線</li>
+          <li>血圧測定</li>
+          <li>血液検査</li>
+          <li>尿検査</li>
+          <li>心電図</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- その他 -->
+
+      <div class="checkup-course-card">
+
+        <div class="checkup-course-number">CHECKUP 03</div>
+
+        <h3>一般健康診断</h3>
+
+        <p class="checkup-course-description">
+          学校や各種資格、施設入所など、
+          指定された項目に応じた健康診断についてご相談いただけます。
+        </p>
+
+        <div class="checkup-price">
+          <span>料金</span>
+          <strong>検査内容により異なります</strong>
+        </div>
+
+        <ul class="checkup-course-list">
+          <li>指定用紙への記入</li>
+          <li>身体測定</li>
+          <li>血液検査</li>
+          <li>尿検査</li>
+          <li>胸部X線</li>
+          <li>その他必要な検査</li>
+        </ul>
+
+      </div>
+
+
+
+      <!-- 企業 -->
+
+      <div class="checkup-course-card">
+
+        <div class="checkup-course-number">CHECKUP 04</div>
+
+        <h3>企業・事業所健診</h3>
+
+        <p class="checkup-course-description">
+          企業・事業所単位での健康診断についても
+          ご相談を承ります。
+        </p>
+
+        <div class="checkup-price">
+          <span>料金</span>
+          <strong>お問い合わせください</strong>
+        </div>
+
+        <ul class="checkup-course-list">
+          <li>企業・事業所からのご予約</li>
+          <li>複数名での受診相談</li>
+          <li>検査内容の事前確認</li>
+          <li>結果書類の発行</li>
+        </ul>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     雇入時健診
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">PRE-EMPLOYMENT CHECKUP</p>
+
+      <h2>雇入時健康診断</h2>
+
+    </div>
+
+
+    <div class="checkup-lead">
+
+      <p>
+        就職・転職などで新たに勤務を開始する際に
+        会社から健康診断書の提出を求められた方を対象とした健康診断です。
+      </p>
+
+      <p>
+        会社指定の健康診断書や指定用紙をお持ちの場合は、
+        ご予約時または受診時にご提示ください。
+      </p>
+
+    </div>
+
+
+    <div class="checkup-table-wrap">
+
+      <table class="checkup-table">
+
+        <thead>
+
+          <tr>
+            <th>項目</th>
+            <th>検査内容</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th>問診・診察</th>
+            <td>
+              既往歴・業務歴、自覚症状・他覚症状の確認
+            </td>
+          </tr>
+
+          <tr>
+            <th>身体測定</th>
+            <td>
+              身長・体重・BMI・腹囲
+            </td>
+          </tr>
+
+          <tr>
+            <th>視力・聴力</th>
+            <td>
+              視力検査、聴力検査
+            </td>
+          </tr>
+
+          <tr>
+            <th>血圧</th>
+            <td>
+              血圧測定
+            </td>
+          </tr>
+
+          <tr>
+            <th>胸部</th>
+            <td>
+              胸部X線検査
+            </td>
+          </tr>
+
+          <tr>
+            <th>貧血検査</th>
+            <td>
+              赤血球数、血色素量
+            </td>
+          </tr>
+
+          <tr>
+            <th>肝機能検査</th>
+            <td>
+              AST（GOT）、ALT（GPT）、γ-GTP
+            </td>
+          </tr>
+
+          <tr>
+            <th>脂質検査</th>
+            <td>
+              LDLコレステロール、HDLコレステロール、
+              中性脂肪
+            </td>
+          </tr>
+
+          <tr>
+            <th>血糖検査</th>
+            <td>
+              血糖
+            </td>
+          </tr>
+
+          <tr>
+            <th>尿検査</th>
+            <td>
+              尿糖、尿蛋白
+            </td>
+          </tr>
+
+          <tr>
+            <th>心電図</th>
+            <td>
+              安静時心電図
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+
+    <div class="checkup-info-box">
+
+      <h3>会社指定の用紙をお持ちの方へ</h3>
+
+      <p>
+        勤務先によって必要となる検査項目や
+        診断書の書式が異なる場合があります。
+      </p>
+
+      <p>
+        会社指定の用紙がある場合は、
+        必ず受診時にご持参ください。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     定期健康診断
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">PERIODIC CHECKUP</p>
+
+      <h2>定期健康診断</h2>
+
+    </div>
+
+
+    <div class="checkup-lead">
+
+      <p class="checkup-lead-main">
+        企業で働く方の<br>
+        定期的な健康管理に
+      </p>
+
+      <p>
+        労働安全衛生法に基づく定期健康診断に対応します。
+      </p>
+
+      <p>
+        年齢など一定の条件により、
+        医師の判断のもと一部の検査項目を省略できる場合があります。
+        勤務先から検査項目の指定がある場合は、
+        その内容をご確認のうえご予約ください。
+      </p>
+
+    </div>
+
+
+    <div class="checkup-table-wrap">
+
+      <table class="checkup-table">
+
+        <thead>
+
+          <tr>
+            <th>検査分類</th>
+            <th>主な検査内容</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th>問診</th>
+            <td>
+              既往歴・業務歴、自覚症状・他覚症状
+            </td>
+          </tr>
+
+          <tr>
+            <th>身体測定</th>
+            <td>
+              身長・体重・BMI・腹囲
+            </td>
+          </tr>
+
+          <tr>
+            <th>感覚器</th>
+            <td>
+              視力・聴力
+            </td>
+          </tr>
+
+          <tr>
+            <th>循環器</th>
+            <td>
+              血圧・心電図
+            </td>
+          </tr>
+
+          <tr>
+            <th>呼吸器</th>
+            <td>
+              胸部X線検査
+            </td>
+          </tr>
+
+          <tr>
+            <th>血液検査</th>
+            <td>
+              貧血、肝機能、脂質、血糖など
+            </td>
+          </tr>
+
+          <tr>
+            <th>尿検査</th>
+            <td>
+              尿糖・尿蛋白
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     神戸市の健診
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">KOBE CITY CHECKUP</p>
+
+      <h2>神戸市の健康診査</h2>
+
+    </div>
+
+
+    <div class="checkup-lead">
+
+      <p>
+        当院では、神戸市の指定医療機関として
+        各種健康診査への対応を予定しています。
+      </p>
+
+      <p>
+        対象となる方や受診方法、自己負担額などは
+        年度や制度によって異なるため、
+        詳細は神戸市からの案内・受診券をご確認ください。
+      </p>
+
+    </div>
+
+
+    <div class="public-checkup-grid">
+
+
+      <div class="public-checkup-card">
+
+        <h3>神戸市国保特定健康診査</h3>
+
+        <p>
+          神戸市国民健康保険に加入されている
+          対象年齢の方を対象とした健康診査です。
+        </p>
+
+        <p>
+          メタボリックシンドロームに着目し、
+          生活習慣病のリスクを確認します。
+        </p>
+
+      </div>
+
+
+      <div class="public-checkup-card">
+
+        <h3>後期高齢者健康診査</h3>
+
+        <p>
+          後期高齢者医療制度に加入されている方を対象とした
+          健康診査です。
+        </p>
+
+        <p>
+          生活習慣病やフレイルなどの予防につなげるため、
+          定期的な健康状態の確認を行います。
+        </p>
+
+      </div>
+
+
+      <div class="public-checkup-card">
+
+        <h3>神戸市健康診査</h3>
+
+        <p>
+          神戸市が定める対象者の方に実施される
+          健康診査です。
+        </p>
+
+        <p>
+          対象条件や受診方法については、
+          神戸市からの案内をご確認ください。
+        </p>
+
+      </div>
+
+
+      <div class="public-checkup-card">
+
+        <h3>各種がん検診</h3>
+
+        <p>
+          神戸市が実施する各種がん検診についても、
+          当院で実施する検診が決まり次第、
+          対象年齢・受診方法・費用などを
+          ホームページでご案内します。
+        </p>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="checkup-info-box">
+
+      <h3>神戸市の健診・検診について</h3>
+
+      <p>
+        各制度の対象年齢、受診期間、自己負担額、
+        必要な受診券などは年度によって変更される場合があります。
+      </p>
+
+      <p>
+        当院での対応開始時期・対象となる健診については、
+        開院後の最新情報をご確認ください。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     オプション検査
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">OPTION</p>
+
+      <h2>さらに詳しく調べたい方へ</h2>
+
+    </div>
+
+
+    <div class="checkup-lead">
+
+      <p>
+        通常の健康診断に加えて、
+        ご自身の健康状態や気になる病気に応じた
+        各種検査についてもご相談いただけます。
+      </p>
+
+    </div>
+
+
+    <div class="disease-grid">
+
+
+      <div class="disease-card">
+
+        <h3>胃カメラ</h3>
+
+        <p>
+          食道・胃・十二指腸を内視鏡で直接観察します。
+          胃がん・食道がんなどの早期発見を目的とした検査です。
+        </p>
+
+      </div>
+
+
+      <div class="disease-card">
+
+        <h3>大腸カメラ</h3>
+
+        <p>
+          大腸を内視鏡で詳しく観察し、
+          大腸がんや大腸ポリープなどの発見を目的とします。
+        </p>
+
+      </div>
+
+
+      <div class="disease-card">
+
+        <h3>腹部超音波検査</h3>
+
+        <p>
+          肝臓、胆のう、膵臓、腎臓などの
+          腹部臓器を超音波で観察します。
+        </p>
+
+      </div>
+
+
+      <div class="disease-card">
+
+        <h3>胸腹部CT</h3>
+
+        <p>
+          胸部から腹部までを断面画像として撮影し、
+          肺や腹部臓器などを詳しく確認します。
+        </p>
+
+      </div>
+
+
+      <div class="disease-card">
+
+        <h3>追加血液検査</h3>
+
+        <p>
+          通常の健康診断に含まれない血液検査についても、
+          ご希望や必要性に応じてご相談いただけます。
+        </p>
+
+      </div>
+
+
+      <div class="disease-card">
+
+        <h3>人間ドック</h3>
+
+        <p>
+          より詳しく全身を調べたい方には、
+          胃・大腸カメラやCTを組み合わせた
+          人間ドックもご用意しています。
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     健康診断後のフォロー
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container">
+
+    <div class="detail-text">
+
+      <p class="detail-label">AFTER CHECKUP</p>
+
+      <h2>
+        健康診断で<br>
+        異常を指摘された方へ
+      </h2>
+
+      <p>
+        健康診断は、受けて終わりではありません。
+      </p>
+
+      <p>
+        血圧、血糖、コレステロール、
+        肝機能などの異常を指摘された場合には、
+        必要に応じて再検査や治療をご案内します。
+      </p>
+
+      <p>
+        また、便潜血陽性や胃の異常など、
+        消化器の精密検査が必要な場合には、
+        当院で胃カメラ・大腸カメラなどの
+        精密検査まで対応します。
+      </p>
+
+      <p>
+        より専門的な検査・治療が必要な場合には、
+        適切な医療機関へご紹介します。
+      </p>
+
+    </div>
+
+
+    <div class="detail-image">
+
+      <img src="images/checkup-follow.jpg"
+           alt="健康診断後の結果説明">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     検査の流れ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">FLOW</p>
+
+      <h2>健康診断の流れ</h2>
+
+    </div>
+
+
+    <div class="flow-photo-list">
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="健康診断の予約">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 01</div>
+
+          <h3>ご予約</h3>
+
+          <p>
+            WEBまたはお電話からご予約ください。
+          </p>
+
+          <p>
+            勤務先などから指定された検査項目や
+            指定用紙がある場合は、あらかじめご確認ください。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="健康診断当日の受付">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 02</div>
+
+          <h3>受付</h3>
+
+          <p>
+            ご来院後、受付を行います。
+            指定の健康診断書や受診券などをお持ちの場合は
+            受付時にご提出ください。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="健康診断の各種検査">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 03</div>
+
+          <h3>各種検査</h3>
+
+          <p>
+            身体測定、視力・聴力、血圧、
+            採血、尿検査、胸部X線、心電図など、
+            必要な検査を順番に行います。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="医師による診察">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 04</div>
+
+          <h3>医師による診察</h3>
+
+          <p>
+            問診および診察を行います。
+            気になる症状やこれまでの病歴などがあれば
+            お伝えください。
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <div class="flow-chevron" aria-hidden="true"></div>
+
+
+
+      <article class="flow-photo-item">
+
+        <div class="flow-photo-image">
+          <img src="#" alt="健康診断結果の受け取り">
+        </div>
+
+        <div>
+
+          <div class="flow-photo-step">STEP 05</div>
+
+          <h3>結果のお渡し</h3>
+
+          <p>
+            すべての検査結果がそろった後、
+            健康診断結果・診断書を発行します。
+          </p>
+
+          <p class="flow-note">
+            ※結果のお渡しまでの日数は、
+            検査内容によって異なります。
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     注意事項
+======================================== -->
+
+<section class="detail-section">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">IMPORTANT INFORMATION</p>
+
+      <h2>健康診断を受けられる方へ</h2>
+
+    </div>
+
+
+    <div class="medical-intro">
+
+      <p>
+        血液検査を含む健康診断では、
+        食事の影響を受ける検査項目があります。
+        ご予約時に飲食についての注意事項をご案内します。
+      </p>
+
+      <p>
+        普段服用しているお薬がある方は、
+        自己判断で中止せず、
+        ご予約時または受診時にお申し出ください。
+      </p>
+
+      <p>
+        妊娠中または妊娠の可能性がある方は、
+        胸部X線検査などを行う前に必ずお申し出ください。
+      </p>
+
+      <p>
+        勤務先や学校などから指定された
+        健康診断書・検査項目がある場合は、
+        必ず指定書類をご持参ください。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     FAQ
+======================================== -->
+
+<section class="detail-section gray">
+
+  <div class="detail-container single">
+
+    <div class="detail-heading">
+
+      <p class="detail-label">FAQ</p>
+
+      <h2>よくあるご質問</h2>
+
+    </div>
+
+
+    <div class="checkup-faq">
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          健康診断は予約が必要ですか？
+        </div>
+
+        <div class="checkup-faq-a">
+          原則としてご予約をお願いしています。
+          WEBまたはお電話からお問い合わせください。
+        </div>
+
+      </div>
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          会社指定の健康診断書に記入してもらえますか？
+        </div>
+
+        <div class="checkup-faq-a">
+          対応可能な書式であれば記入いたします。
+          指定用紙をお持ちの場合は受診時にご持参ください。
+          必要な検査項目についてもあらかじめご確認ください。
+        </div>
+
+      </div>
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          健康診断当日は食事をしても大丈夫ですか？
+        </div>
+
+        <div class="checkup-faq-a">
+          血液検査の内容によっては、
+          食事を控えていただく必要があります。
+          ご予約時に受診される健診内容に応じてご案内します。
+        </div>
+
+      </div>
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          健康診断の結果は当日もらえますか？
+        </div>
+
+        <div class="checkup-faq-a">
+          採血など結果が後日判明する検査を含む場合は、
+          当日にすべての結果をお渡しすることはできません。
+          お渡しまでの日数は検査内容によって異なります。
+        </div>
+
+      </div>
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          健康診断で異常を指摘された場合も診てもらえますか？
+        </div>
+
+        <div class="checkup-faq-a">
+          はい。
+          血圧・血糖・脂質・肝機能などの異常について
+          当院でご相談いただけます。
+          また、消化器の精密検査が必要な場合には、
+          胃カメラ・大腸カメラなどにも対応します。
+        </div>
+
+      </div>
+
+
+      <div class="checkup-faq-item">
+
+        <div class="checkup-faq-q">
+          健康診断と人間ドックは何が違いますか？
+        </div>
+
+        <div class="checkup-faq-a">
+          健康診断は、法令や勤務先などで定められた項目を中心に
+          健康状態を確認する検査です。
+          より詳しく全身を調べたい方には、
+          胃・大腸カメラやCTなどを組み合わせた
+          人間ドックをご用意しています。
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================
+     CTA
+======================================== -->
+
+<section class="cta-section">
+
+  <h2>
+    健康診断の<br>
+    ご予約・ご相談
+  </h2>
+
+  <p>
+    雇入時健康診断・定期健康診断など、<br>
+    各種健康診断についてお気軽にご相談ください。
+  </p>
+
+
+  <div class="cta-buttons">
+
+    <a href="#" class="cta-btn">
+      WEB予約はこちら
+    </a>
+
+    <a href="tel:00000000000" class="cta-btn tel-btn">
+      TEL: 000-000-0000
+    </a>
+
+  </div>
+
+</section>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
